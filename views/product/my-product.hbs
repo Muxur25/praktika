@@ -1,0 +1,107 @@
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-6 offset-3'>
+			<div class='card mt-3'>
+				<div class='card-body'>
+					<form
+						action='/product/add'
+						method='post'
+						enctype='application/x-www-form-urlencoded'
+					>
+						{{#if error}}
+							<div class='alert alert-warning' role='alert'>
+								{{error}}
+							</div>
+						{{/if}}
+						<div class='mb-3'>
+							<label for='image' class='form-label'>Image for link</label>
+							<input class='form-control' type='text' id='image' name='image' />
+						</div>
+						<div class='mb-3'>
+							<label for='image' class='form-label'>Title</label>
+							<input class='form-control' type='text' id='title' name='title' />
+						</div>
+						<div class='mb-3'>
+							<label for='image' class='form-label'>Amount</label>
+							<input
+								class='form-control'
+								type='text'
+								id='title'
+								name='amount'
+							/>
+						</div>
+						<div class='mb-3'>
+							<label for='text' class='form-label'>description textarea</label>
+							<textarea
+								class='form-control'
+								id='exampleFormControlTextarea1'
+								name='description'
+								rows='4'
+							></textarea>
+						</div>
+
+						<button type='submit' class='btn btn-primary'>Submit</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class='row'>
+		<div class='col-md-6 offset-3'>
+			{{#if data}}
+				{{#each data}}
+					<div class='card mb-5 mt-5'>
+						<div class='card-body'>
+							<div class='list-group mb-1'>
+								<a
+									href='/user/my/'
+									class='list-group-item list-group-item-action'
+								>
+									<img
+										src='https://img.freepik.com/premium-vector/bearded-man-avatar-man-vector-portrait_9385-36.jpg'
+										class='rounded-circle float-start'
+										style='height: 30px;'
+										alt='...'
+									/>
+									<h5 class='card-title'>{{user.firstName}}</h5>
+								</a>
+							</div>
+							<p class='card-text'>Mahsulot nomi: {{title}}</p>
+							<p class='card-text'>Mahsulot narxi: {{amount}}</p>
+							<p class='card-text'>Mahsulot haqida qisqacha: {{description}}</p>
+							<p class='card-text'><small
+									class='text-muted'
+								>{{createdAt}}</small></p>
+						</div>
+						{{#if image}}
+							<img src='{{image}}' class='card-img-bottom' alt='...' />
+						{{/if}}
+
+						<div class='card-footer d-flex'>
+							<a
+								href='/product/my-one/{{id}}'
+								type='button'
+								class='btn btn-success mx-1'
+							>Open</a>
+							<a
+								href='/product/update/page/{{id}}'
+								type='button'
+								class='btn btn-primary mx-1'
+							>Update</a>
+							<form action='/product/delete/{{id}}' method='post'>
+
+								<button
+									type='submit'
+									class='btn btn-danger mx-1'
+								>Delete</button>
+							</form>
+						</div>
+					</div>
+				{{/each}}
+			{{else}}
+				<h1>No diery add ed</h1>
+			{{/if}}
+
+		</div>
+	</div>
+</div>

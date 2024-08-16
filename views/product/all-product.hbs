@@ -1,0 +1,79 @@
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-6 offset-3'>
+			{{#if data}}
+
+				{{#each data}}
+					<div class='card mb-5 mt-5'>
+						<div class='card-body'>
+							<div class='list-group mb-1'>
+								<a
+									href='/user/profile/{{user.id}}'
+									class='list-group-item list-group-item-action'
+								>
+									<img
+										src='https://img.freepik.com/premium-vector/bearded-man-avatar-man-vector-portrait_9385-36.jpg'
+										class='rounded-circle float-start'
+										style='height: 30px;'
+										alt='...'
+									/>
+									<h5 class='card-title'>{{user.firstName}}</h5>
+								</a>
+							</div>
+							<p class='card-text'>Mahsulot nomi: {{title}}</p>
+							<p class='card-text'>Mahsulot narxi: {{amount}}</p>
+							<p class='card-text'>Mahsulot tavsifi: {{description}}</p>
+							<p class='card-text'><small
+									class='text-muted'
+								>{{createdAt}}</small></p>
+						</div>
+						{{#if image}}
+							<img src='{{image}}' class='card-img-bottom' alt='...' />
+						{{/if}}
+						<div class='card-footer'>
+							<a
+								href='/product/one/{{id}}'
+								type='button'
+								class='btn btn-success'
+							>Open</a>
+						</div>
+					</div>
+				{{/each}}
+
+				<ul class='pagination pagination-lg'>
+					{{#if currentNotOne}}
+						<li class='page-item' aria-current='page'>
+							<a class='page-link' href='/product/all?page=1'>1</a>
+						</li>
+					{{/if}}
+					{{#if hasPrevisePage}}
+						<li class='page-item'><a
+								class='page-link'
+								href='/product/all?page={{previPage}}'
+							>{{previPage}}</a></li>
+					{{/if}}
+					<li class='page-item active'><a
+							class='page-link'
+							href='/product/all?page={{currentPage}}'
+						>{{currentPage}}</a></li>
+					{{#if hasNextPage}}
+						<li class='page-item'><a
+								class='page-link'
+								href='/product/all?page={{nextPage}}'
+							>{{nextPage}}</a></li>
+					{{/if}}
+					{{#if lastPageCheking}}
+						<li class='page-item'><a
+								class='page-link'
+								href='/product/all?page={{lastPage}}'
+							>{{lastPage}}</a></li>
+					{{/if}}
+
+				</ul>
+			{{else}}
+				<h1>Productlar mavjud emas</h1>
+			{{/if}}
+
+		</div>
+	</div>
+</div>

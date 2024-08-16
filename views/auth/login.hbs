@@ -1,0 +1,46 @@
+<div class='container mt-5'>
+	<div class='row'>
+		<div class='col-md-6 offset-3'>
+			<form action='/user/login' method='post' novalidate>
+				{{#if errorPass}}
+					<div class='alert alert-warning' role='alert'>
+						{{errorPass}}
+					</div>
+				{{/if}}
+
+				{{#if yoqlama}}
+					<div class='alert alert-warning' role='alert'>
+						{{yoqlama}}
+					</div>
+				{{/if}}
+				{{#if yoq}}
+					<div class='alert alert-warning' role='alert'>
+						{{yoq}}
+					</div>
+				{{/if}}
+				<div class='mb-3'>
+					<label for='email' class='form-label'>Email address</label>
+					<input
+						type='email'
+						class='form-control'
+						name='email'
+						id='email'
+						value='{{oldValue.email}}'
+					/>
+				</div>
+				<div class='mb-3'>
+					<label for='password' class='form-label'>Password</label>
+					<input
+						type='password'
+						class='form-control'
+						name='password'
+						id='password'
+						value='{{oldValue.password}}'
+					/>
+				</div>
+				<input type='hidden' name='_csrf' value='{{csrfToken}}' />
+				<button type='submit' class='btn btn-primary'>Submit</button>
+			</form>
+		</div>
+	</div>
+</div>

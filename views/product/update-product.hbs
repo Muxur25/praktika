@@ -1,0 +1,59 @@
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-6 offset-3'>
+			<div class='card mt-3'>
+				<div class='card-body'>
+					<form
+						action='/product/update/{{data.id}}'
+						method='post'
+						enctype='application/x-www-form-urlencoded'
+					>
+						<div class='mb-3'>
+							<label for='image' class='form-label'>Title</label>
+							<input
+								class='form-control'
+								type='text'
+								id='title'
+								name='title'
+								value='{{data.title}}'
+							/>
+						</div>
+						<div class='mb-3'>
+							<label for='text' class='form-label'>Description textarea</label>
+							<textarea
+								class='form-control'
+								id='exampleFormControlTextarea1'
+								rows='4'
+								name='description'
+							>{{data.description}}</textarea>
+						</div>
+						<div class='mb-3'>
+							<label for='image' class='form-label'>Amount</label>
+							<input
+								class='form-control'
+								type='text'
+								id='title'
+								name='amount'
+								value='{{data.amount}}'
+							/>
+						</div>
+
+						<div class='mb-3'>
+							<label for='image' class='form-label'>Image</label>
+							<input
+								class='form-control'
+								type='text'
+								id='title'
+								name='image'
+								value='{{data.image}}'
+							/>
+						</div>
+
+						<input type='hidden' name='_csrf' value='{{csrfToken}}' />
+						<button type='submit' class='btn btn-primary mt-3'>Update</button>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

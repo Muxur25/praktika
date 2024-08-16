@@ -1,0 +1,49 @@
+<nav class='navbar navbar-expand-lg navbar-dark bg-primary'>
+	<div class='container-fluid'>
+		<a class='navbar-brand' href='/'>DiaryBook</a>
+		<button
+			class='navbar-toggler'
+			type='button'
+			data-bs-toggle='collapse'
+			data-bs-target='#navbarSupportedContent'
+			aria-controls='navbarSupportedContent'
+			aria-expanded='false'
+			aria-label='Toggle navigation'
+		>
+			<span class='navbar-toggler-icon'></span>
+		</button>
+		<div class='collapse navbar-collapse' id='navbarSupportedContent'>
+			<ul class='navbar-nav me-auto mb-2 mb-lg-0'>
+				{{#if isAuth}}
+					<li class='nav-item'>
+						<a class='nav-link active' aria-current='page' href='/product/my'>My
+							Products</a>
+					</li>
+					<li class='nav-item'>
+						<a class='nav-link active' href='/user/my'>My Profile</a>
+					</li>
+					<li class='nav-item'>
+						<a
+							class='nav-link active'
+							href='/product/all-buyurtmalar'
+						>Buyurtmalar</a>
+					</li>
+					<li class='nav-item'>
+						<a class='nav-link active' href='/user/logout'>Log out</a>
+					</li>
+
+				{{else}}
+					{{! <li class='nav-item'>
+						<a class='nav-link active' href='/user/l/login'>Login</a>
+					</li> }}
+					{{! <li class='nav-item'>
+						<a class='nav-link active' href='/user/register'>Register</a>
+					</li> }}
+					<li class='nav-item'>
+						<a class='nav-link' href='/product/all?page=1'>Barcha mahsulotlar</a>
+					</li>
+				{{/if}}
+			</ul>
+		</div>
+	</div>
+</nav>

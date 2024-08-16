@@ -1,0 +1,29 @@
+<div class='container'>
+	<div class='row'>
+		<div class='col-md-6 offset-3'>
+			<div class='card mb-3 mt-2'>
+				<img
+					src='https://img.freepik.com/premium-vector/bearded-man-avatar-man-vector-portrait_9385-36.jpg'
+					class='rounded-circle float-start'
+					alt='...'
+				/>
+				<div class='card-body'>
+					<h5 class='card-title'>{{firstName}}</h5>
+					<h4 class='card-title'>{{lastName}}</h4>
+					<ul class='list-group list-group-flush'>
+						<li class='list-group-item'>Email: {{email}}</li>
+						<li class='list-group-item'>Mahsulotlar soni: {{data}}</li>
+					</ul>
+				</div>
+				<div class='card-footer'>
+					<a
+						href='/user/update'
+						type='button'
+						class='btn btn-success'
+					>Update</a>
+					<a href='/user/logout' type='button' class='btn btn-danger'>Logout</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
